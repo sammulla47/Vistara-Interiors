@@ -320,6 +320,11 @@
           />
         </a>
         <button
+                  class="btn ms-auto px-1"
+                  data-bs-toggle="modal"
+                  data-bs-target="#ctaModal" data-toggle="tooltip" data-placement="bottom" title="Dowloand Brochure"
+                ><i class="fas fa-file-download fs-3 align-middle text-warning-emphasis"></i></button>
+        <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="offcanvas"
@@ -947,6 +952,9 @@
       function scrollToTop() {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
     </script>
   </body>
 </html>
