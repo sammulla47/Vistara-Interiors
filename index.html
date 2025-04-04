@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vistara Interiors</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> -->
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;700&family=Nunito:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --royal-primary: #085c88; /* Your logo blue (base royal color) */
+        --royal-accent: #b8860b; /* Gold accent (replaces burnt orange) */
+        --royal-dark: #0a334d; /* Darker blue for contrast */
+        --royal-light: #e6f2f9; /* Light blue background */
+        --royal-cream: #f8f5ee; /* Cream for cards/backgrounds */
+        --royal-text: #333333; /* Dark text for readability */
+      }
+
+      body {
+        background-color: var(--royal-cream);
+        color: var(--royal-text);
+        font-family: "Nunito", sans-serif;
+      }
+
+      .txt-r {
+        color: var(--royal-text);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Crimson Pro", serif;
+        color: var(--royal-primary);
+      }
+
+      /* Enhanced Hero Section (Royal Look) */
+      .hero-section {
+        background: url("https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg")
+          no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+
+      /* .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00000026;    
+    z-index: 1;
+} */
+
+      .hero-section .container {
+        position: relative;
+        z-index: 2;
+        padding: 0 20px;
+      }
+
+      .hero-section h1 {
+        margin-bottom: 20px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        animation: fadeInDown 1s ease;
+        color: var(--royal-cream);
+      }
+
+      .hero-section p {
+        font-size: 1.25rem;
+        animation: fadeInUp 1s ease 0.3s both;
+        color: var(--royal-text);
+        background: var(--royal-light);
+        border-radius: 25px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        width: max-content;
+        padding: inherit;
+        font-weight: 600;
+      }
+
+      .hero-section .btn-primary {
+        animation: fadeIn 1s ease 0.6s both;
+        padding: 12px 30px;
+        font-size: 1.1rem;
+        border-radius: 30px;
+      }
+
+      /* Animation Keyframes */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Royal Navigation */
+      .navbar {
+        background-color: var(--royal-cream);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(8, 92, 136, 0.1);
+      }
+
+      .navbar-brand {
+        padding: 0;
+      }
+
+      .navbar-brand img {
+        height: 50px;
+        max-height: 100%;
+        width: auto;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand img:hover {
+        transform: scale(1.05);
+      }
+
+      .navbar-nav .nav-link {
+        color: var(
+          --royal-primary
+        ) !important; /* Using primary blue for links */
+        font-weight: 500;
+        padding: 0.5rem 1.2rem;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+        border-radius: 4px;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: white !important;
+        background-color: var(--royal-primary);
+        transform: translateY(-2px);
+      }
+
+      /* Active nav item styling */
+      .navbar-nav .nav-item.active .nav-link {
+        color: var(--royal-accent) !important;
+        font-weight: 600;
+      }
+
+      /* CTA button in navigation */
+      .navbar .btn-primary {
+        margin-left: 15px;
+        box-shadow: 0 3px 10px rgba(8, 92, 136, 0.3);
+      }
+
+      /* Royal Buttons */
+      .btn-primary {
+        background-color: var(--royal-primary);
+        border-color: var(--royal-primary);
+        color: white;
+        padding: 10px 25px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--royal-dark);
+        border-color: var(--royal-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(8, 92, 136, 0.3);
+      }
+
+      /* Royal Cards */
+      .service-card,
+      .testimonial-card {
+        background-color: white;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.4s ease;
+        overflow: hidden;
+      }
+
+      .service-card:hover,
+      .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(8, 92, 136, 0.15);
+      }
+
+      .service-card .card-body,
+      .testimonial-card {
+        padding: 25px;
+      }
+
+      /* Royal Testimonials */
+      .testimonial-card {
+        border-top: 4px solid var(--royal-accent);
+      }
+
+      .testimonial-card img {
+        border: 3px solid var(--royal-accent);
+      }
+
+      /* Royal Footer */
+      .footer {
+        background-color: var(--royal-dark);
+        color: white;
+        padding: 40px 0 20px;
+      }
+
+      .footer .text-muted {
+        color: var(--royal-accent) !important;
+      }
+
+      /* Royal Modal */
+      .modal-content {
+        border: none;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(8, 92, 136, 0.2);
+      }
+
+      .modal-header {
+        background-color: var(--royal-cream);
+        color: white;
+        border-bottom: 2px solid var(--royal-accent);
+      }
+
+      /* Carousel Indicators (Royal Dots) */
+      .carousel-indicators [data-bs-target] {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: var(--royal-primary);
+        opacity: 0.5;
+      }
+
+      .carousel-indicators .active {
+        opacity: 1;
+        background-color: var(--royal-accent);
+        transform: scale(1.2);
+      }
+
+      .carousel-indicators {
+        bottom: -3.5rem;
+      }
+
+      /* Offcanvas menu adjustments */
+      .offcanvas {
+        background-color: var(--royal-cream);
+      }
+
+      .offcanvas .nav-link {
+        color: var(--royal-primary);
+        padding: 12px 25px;
+        margin: 5px 0;
+      }
+      @media screen and (max-width: 768px) {
+        .hero-section p {
+          font-size: 0.9rem;
+        }
+      }
+    .atc-btn {
+      color: var(--royal-primary); 
+      border-bottom: 2px solid var(--royal-accent);
+      padding-bottom: 3px;
+    }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header with Logo and Navigation Menu -->
+    <header class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="./vistara-interiors-logo.webp"
+            alt="Vistara Interiors Logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <!-- <span class="navbar-toggler-icon"></span> -->
+          <img src="./menu-icon.svg" alt="Menu Icon" width="32" height="32" />
+        </button>
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              Vistara Interiors
+            </h5>
+            <button
+              type="button"
+              class="btn-close text-reset"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#testimonials">Testimonials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <button
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#ctaModal"
+                >
+                  Dowloand Brochure
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="display-2 fw-semibold">Welcome to Vistara Interiors</h1>
+        <p class="lead text-capitalize">
+          Transforming spaces into <span>works of art</span>
+        </p>
+        <a href="#services" class="btn btn-primary btn-lg">Explore Services</a>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="container my-5">
+      <div class="row">
+        <div class="col-md-6">
+          <span>About Us</span>
+          <h2>Crafting Pune’s Finest Spaces Since 2020</h2>
+          <p>
+            Since our inception in 2020, VISTARA INTERIORS & TEAM. Interior Designers has grown to become one of the leading & most sought after interior design companies in Pune, Maharashtra. What makes us stand out is our technical expertise, 100% customisable & modular interior design concepts with timely execution & delivery. We aim to create spaces that best suit our clients' aesthetics & needs.
+          </p>
+
+          <h3>The Art of Thoughtful Design</h3>
+          <p>
+            We approach each project as collaborators, not just contractors. Our
+            process begins by listening—to your routines, your frustrations with
+            current spaces, and your vision for what’s possible. This dialogue
+            shapes:
+          </p>
+          <ul>
+            <li>Custom architectural details that solve real-life problems</li>
+            <li>Material selections balancing beauty with durability</li>
+            <li>Lighting strategies that adapt to moods and tasks</li>
+            <li>Spatial flow designed for how you move</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="About Us"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="trust-section bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Why Choose Us?</h2>
+        <div class="row">
+          <div class="col-md-4 mb-2">
+            <div class="card text-center p-4">
+              <h3 class="card-title">Experienced Team</h3>
+              <p class="card-text">
+                Our team of designers and craftsmen has over a decade of
+                experience in creating stunning interiors.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-2">
+            <div class="card text-center p-4">
+              <h3 class="card-title">Custom Designs</h3>
+              <p class="card-text">
+                We offer 100% customizable designs to match your unique style
+                and preferences.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-2">
+            <div class="card text-center p-4">
+              <h3 class="card-title">Timely Delivery</h3>
+              <p class="card-text">
+                We ensure that every project is completed on time, without
+                compromising on quality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="container my-5">
+      <h2 class="text-center mb-4">Our Services</h2>
+      <div class="row">
+        <!-- Interior Design Consultation -->
+        <div class="col-md-4 mb-4">
+          <div class="card service-card">
+            <img
+              src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              class="card-img-top"
+              alt="Interior Design Consultation"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Interior Design Consultation</h5>
+              <p class="card-text">
+                Offering professional consultations to help clients visualize
+                and plan their interior spaces. Ideal for homeowners or
+                businesses seeking design direction and expert advice.
+              </p>
+              <a href="javascript:void(0)" class="text-decoration-none fw-semibold letter-spacing-1 atc-btn" data-bs-toggle="modal" data-bs-target="#ctaModal">
+                Request Your Free Quote
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Residential Interior Design -->
+        <div class="col-md-4 mb-4">
+          <div class="card service-card">
+            <img
+              src="https://images.pexels.com/photos/280232/pexels-photo-280232.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              class="card-img-top"
+              alt="Residential Interior Design"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Residential Interior Design</h5>
+              <p class="card-text">
+                Specializing in transforming homes with tailored design
+                solutions, from living rooms to bedrooms, creating functional
+                and aesthetically pleasing spaces.
+              </p>
+              <a href="javascript:void(0)" class="text-decoration-none fw-semibold letter-spacing-1 atc-btn" data-bs-toggle="modal" data-bs-target="#ctaModal">
+                Request Your Free Quote
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Commercial Interior Design -->
+        <div class="col-md-4 mb-4">
+          <div class="card service-card">
+            <img
+              src="https://images.pexels.com/photos/5824877/pexels-photo-5824877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              class="card-img-top"
+              alt="Commercial Interior Design"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Commercial Interior Design</h5>
+              <p class="card-text">
+                Designing office spaces, retail stores, and other commercial
+                environments with a focus on functionality, aesthetics, and
+                brand identity.
+              </p>
+              <a href="javascript:void(0)" class="text-decoration-none fw-semibold letter-spacing-1 atc-btn" data-bs-toggle="modal" data-bs-target="#ctaModal">
+                Request Your Free Quote
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Interior Visualization -->
+        <div class="col-md-4 mb-4">
+          <div class="card service-card">
+            <img
+              src="https://images.pexels.com/photos/7031607/pexels-photo-7031607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              class="card-img-top"
+              alt="3D Interior Visualization"
+            />
+            <div class="card-body">
+              <h5 class="card-title">3D Interior Visualization</h5>
+              <p class="card-text">
+                Providing realistic 3D renderings and visualizations to bring
+                design concepts to life, helping clients envision their spaces
+                before implementation.
+              </p>
+              <a href="javascript:void(0)" class="text-decoration-none fw-semibold letter-spacing-1 atc-btn" data-bs-toggle="modal" data-bs-target="#ctaModal">
+                Request Your Free Quote
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Furniture Selection and Customization -->
+        <div class="col-md-4 mb-4">
+          <div class="card service-card">
+            <img
+              src="https://images.pexels.com/photos/5824877/pexels-photo-5824877.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              class="card-img-top"
+              alt="Furniture Selection and Customization"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Furniture Selection and Customization</h5>
+              <p class="card-text">
+                Personalized furniture selection and customization services to
+                create unique, functional, and stylish pieces that suit each
+                interior design project.
+              </p>
+              <a href="javascript:void(0)" class="text-decoration-none fw-semibold letter-spacing-1 atc-btn" data-bs-toggle="modal" data-bs-target="#ctaModal">
+                Request Your Free Quote
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lighting Design and Installation -->
+        <div class="col-md-4 mb-4">
+          <div class="card service-card">
+            <img
+              src="https://images.pexels.com/photos/6782567/pexels-photo-6782567.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              class="card-img-top"
+              alt="Lighting Design and Installation"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Lighting Design and Installation</h5>
+              <p class="card-text">
+                Creating and installing lighting solutions that enhance the
+                mood, functionality, and aesthetic appeal of any space.
+              </p>
+              <a href="javascript:void(0)" class="text-decoration-none fw-semibold letter-spacing-1 atc-btn" data-bs-toggle="modal" data-bs-target="#ctaModal">
+                Request Your Free Quote
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Our Process Section -->
+    <section class="trust-section bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Our Process</h2>
+        <div class="row">
+          <div class="col-md-3 mb-2">
+            <div class="card text-center p-4">
+              <h3 class="card-title">Consultation</h3>
+              <p class="card-text">
+                We start with a detailed consultation to understand your vision
+                and requirements.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-2">
+            <div class="card text-center p-4">
+              <h3 class="card-title">Design</h3>
+              <p class="card-text">
+                Our designers create a custom plan that aligns with your style
+                and budget.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-2">
+            <div class="card text-center p-4">
+              <h3 class="card-title">Execution</h3>
+              <p class="card-text">
+                Our skilled craftsmen bring the design to life with precision
+                and care.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 mb-2">
+            <div class="card text-center p-4">
+              <h3 class="card-title">Delivery</h3>
+              <p class="card-text">
+                We ensure timely delivery and a seamless experience from start
+                to finish.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial Slider -->
+    <section id="testimonials" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">What Our Clients Say</h2>
+        <div
+          id="testimonialSlider"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <!-- Carousel Indicators (Dots) -->
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#testimonialSlider"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#testimonialSlider"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#testimonialSlider"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+
+          <!-- Carousel Inner -->
+          <div class="carousel-inner">
+            <!-- Testimonial 1 -->
+            <div class="carousel-item active">
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <div class="testimonial-card">
+                    <img
+                      src="./user-icon.svg"
+                      alt="Client 1"
+                      width="64"
+                      height="64"
+                      class="rounded-circle p-1 mb-1"
+                    />
+                    <p>
+                      "Vistara Interiors transformed our home into a
+                      masterpiece. Highly recommended!"
+                    </p>
+                    <h5>- Client A</h5>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <div class="testimonial-card">
+                    <img
+                      src="./user-icon.svg"
+                      alt="Client 2"
+                      width="64"
+                      height="64"
+                      class="rounded-circle p-1 mb-1"
+                    />
+                    <p>
+                      "Their modular kitchen designs are both functional and
+                      beautiful."
+                    </p>
+                    <h5>- Client B</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <div class="testimonial-card">
+                    <img
+                      src="./user-icon.svg"
+                      alt="Client 3"
+                      width="64"
+                      height="64"
+                      class="rounded-circle p-1 mb-1"
+                    />
+                    <p>
+                      "Timely execution and excellent customer service. Thank
+                      you, Vistara!"
+                    </p>
+                    <h5>- Client C</h5>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <div class="testimonial-card">
+                    <img
+                      src="./user-icon.svg"
+                      alt="Client 4"
+                      width="64"
+                      height="64"
+                      class="rounded-circle p-1 mb-1"
+                    />
+                    <p>
+                      "The 3D visualizations helped us make decisions with
+                      confidence."
+                    </p>
+                    <h5>- Client D</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="carousel-item">
+              <div class="row">
+                <div class="col-md-6 mb-2">
+                  <div class="testimonial-card">
+                    <img
+                      src="./user-icon.svg"
+                      alt="Client 5"
+                      width="64"
+                      height="64"
+                      class="rounded-circle p-1 mb-1"
+                    />
+                    <p>
+                      "The lighting design completely transformed our living
+                      room."
+                    </p>
+                    <h5>- Client E</h5>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                  <div class="testimonial-card">
+                    <img
+                      src="./user-icon.svg"
+                      alt="Client 6"
+                      width="64"
+                      height="64"
+                      class="rounded-circle p-1 mb-1"
+                    />
+                    <p>
+                      "Custom furniture that fits our space perfectly. Amazing
+                      work!"
+                    </p>
+                    <h5>- Client F</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-light px-3 px-md-5 py-5">
+      
+      <div class="row justify-content-md-evenly px-lg-5">
+        <div class="col-md-5 px-lg-5 mb-2">
+          <h2 class="mb-4">Get in Touch</h2>
+          <form>
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Your Email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                rows="5"
+                placeholder="Your Message"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h2 class="mb-4">Contact Us</h2>
+          <p>
+            <strong>Email:</strong>
+            <a
+              href="mailto:teamvistarainteriors@gmail.com"
+              class="text-dark text-decoration-none"
+              >teamvistarainteriors@gmail.com</a
+            >
+          </p>
+          <p class="">
+            <strong>Phone:</strong>
+            <a href="tel:+919595908181" class="text-dark text-decoration-none"
+              >+91 95959 08181</a
+            >,
+            <a href="tel:+917620048384" class="text-dark text-decoration-none"
+              >+91 76200 48384</a
+            >,
+            <a href="tel:+91959287005" class="text-dark text-decoration-none"
+              >+91 95952 87005</a
+            >
+          </p>
+          <p class="pe-md-5">
+            <strong>Address:</strong> Office No. 01, Ambekar Hotel Chowk,<br>
+            Opposite Mayur Artifacts, Undri, Pune - 411060
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer pb-1 position-relative">
+      <div class="container text-center">
+        <p class="mb-3">Follow Us:</p>
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <a
+              href="https://www.instagram.com/vistara_interior/?igsh=MW5zY3NhNGljbDg1Ng%3D%3D#"
+              target="_blank"
+              ><i class="fab fa-instagram fs-3 text-white"></i
+            ></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" target="_blank"
+              ><i class="fab fa-facebook fs-3 text-white"></i
+            ></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" target="_blank"
+              ><i class="fab fa-linkedin fs-3 text-white"></i
+            ></a>
+          </li>
+        </ul>
+
+        <!-- Copyright and Disclaimer -->
+        <p>&copy; 2025 Vistara Interiors. All rights reserved.</p>
+        <p class="w-75 mx-auto text-muted">
+          <small>Disclaimer: All images used on this website are for illustrative purposes only and are intended to showcase design concepts. They may not represent actual projects. For personalized design solutions, please contact us directly.</small>
+        </p>
+      </div>
+      <a href="javascript:void(0)" class="scroll-to-top position-absolute bottom-0 text-center text-white small" style="right: 1rem; text-decoration: none;" onclick="scrollToTop()"><i class="fa fa-chevron-up"></i><br>Back to Top</a>
+    </footer>
+
+   <!-- CTA Modal -->
+    <div
+      class="modal fade"
+      id="ctaModal"
+      tabindex="-1"
+      aria-labelledby="ctaModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ctaModalLabel">
+              Ready to Create Your Dream Space?
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <p>Get in touch with us today to start your project!</p>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="tel"
+                  class="form-control"
+                  placeholder="Your Phone Number"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap 5.3 JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>

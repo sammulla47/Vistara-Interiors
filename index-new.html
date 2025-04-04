@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vistara Interiors</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* New Color Palette */
+        :root {
+            /*--deep-burgundy: #800020; */
+            --deep-burgundy: #f8f9fa;
+            --burnt-orange: #FF4500;
+            --soft-cream: #FFF5E1;
+        }
+
+        body {
+            background-color: var(--soft-cream);
+            color: var(--deep-burgundy);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-section {
+            background: url('https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--soft-cream);
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: var(--deep-burgundy) !important;
+        }
+
+        .navbar-brand img {
+            height: 50px;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--soft-cream) !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--burnt-orange) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--deep-burgundy);
+            border-color: var(--deep-burgundy);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--burnt-orange);
+            border-color: var(--burnt-orange);
+        }
+
+        .service-card {
+            transition: transform 0.3s;
+            background-color: var(--soft-cream);
+            border: 1px solid var(--deep-burgundy);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-slider .carousel-item {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--soft-cream);
+            border: 1px solid var(--deep-burgundy);
+        }
+
+        .footer {
+            background-color: var(--deep-burgundy);
+            color: var(--soft-cream);
+            padding: 20px 0;
+        }
+
+        .footer .text-muted {
+            color: var(--burnt-orange) !important;
+        }
+
+        .modal-content {
+            background-color: var(--soft-cream);
+            color: var(--deep-burgundy);
+        }
+
+        .modal-header {
+            background-color: var(--deep-burgundy);
+            color: var(--soft-cream);
+        }
+
+        .modal-footer .btn-primary {
+            background-color: var(--burnt-orange);
+            border-color: var(--burnt-orange);
+        }
+
+        /* Offcanvas Menu */
+        .offcanvas {
+            background-color: var(--deep-burgundy);
+        }
+
+        .offcanvas .nav-link {
+            color: var(--soft-cream) !important;
+        }
+
+        .offcanvas .nav-link:hover {
+            color: var(--burnt-orange) !important;
+        }
+
+        /* Trust-Building Sections */
+        .trust-section {
+            background-color: var(--soft-cream);
+            padding: 60px 0;
+        }
+
+        .trust-section h2 {
+            color: var(--deep-burgundy);
+            margin-bottom: 30px;
+        }
+
+        .trust-section .card {
+            border: 1px solid var(--deep-burgundy);
+            background-color: var(--soft-cream);
+            transition: transform 0.3s;
+        }
+
+        .trust-section .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .trust-section .card-title {
+            color: var(--deep-burgundy);
+        }
+
+        .trust-section .card-text {
+            color: var(--deep-burgundy);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Logo and Navigation Menu -->
+    <header class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/150x50.png?text=Vistara+Logo" alt="Vistara Interiors Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Vistara Interiors</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#testimonials">Testimonials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ctaModal">Get a Quote</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4">Welcome to Vistara Interiors</h1>
+            <p class="lead">Transforming spaces into works of art.</p>
+            <a href="#services" class="btn btn-primary btn-lg">Explore Services</a>
+        </div>
+    </section>
+
+    <!-- Trust Section (Updated) -->
+    <section class="trust-section">
+        <div class="container">
+            <h2 class="text-center mb-5" style="font-family: 'Playfair Display', serif; color: var(--deep-burgundy);">Why Trust Vistara Interiors?</h2>
+            <div class="row text-center">
+                <!-- Experience -->
+                <div class="col-md-4 mb-4">
+                    <div class="card p-4" style="background-color: var(--soft-cream); border: 1px solid var(--deep-burgundy);">
+                        <img src="https://via.placeholder.com/50" alt="Experience" class="mb-3" style="height: 50px;">
+                        <h3 class="card-title" style="color: var(--deep-burgundy);">Experienced Team</h3>
+                        <p class="card-text" style="color: var(--deep-burgundy);">Our team of expert designers and craftsmen has over a decade of experience in creating stunning, tailor-made interiors.</p>
+                    </div>
+                </div>
+                <!-- Custom Designs -->
+                <div class="col-md-4 mb-4">
+                    <div class="card p-4" style="background-color: var(--soft-cream); border: 1px solid var(--deep-burgundy);">
+                        <img src="https://via.placeholder.com/50" alt="Custom Designs" class="mb-3" style="height: 50px;">
+                        <h3 class="card-title" style="color: var(--deep-burgundy);">Custom Designs</h3>
+                        <p class="card-text" style="color: var(--deep-burgundy);">We specialize in fully customized designs, ensuring that your space is unique, functional, and fits your personality perfectly.</p>
+                    </div>
+                </div>
+                <!-- Timely Delivery -->
+                <div class="col-md-4 mb-4">
+                    <div class="card p-4" style="background-color: var(--soft-cream); border: 1px solid var(--deep-burgundy);">
+                        <img src="https://via.placeholder.com/50" alt="Timely Delivery" class="mb-3" style="height: 50px;">
+                        <h3 class="card-title" style="color: var(--deep-burgundy);">On-Time Delivery</h3>
+                        <p class="card-text" style="color: var(--deep-burgundy);">We understand the importance of deadlines. Our team ensures that all projects are delivered on time, without compromising on quality.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Awards or Certifications Section -->
+            <div class="row my-5">
+                <div class="col-12 text-center">
+                    <h3 style="font-family: 'Playfair Display', serif; color: var(--deep-burgundy);">Awards & Certifications</h3>
+                    <p style="color: var(--deep-burgundy);">We are proud to be recognized by top industry bodies for our work in interior design. Our certifications and awards showcase our commitment to excellence.</p>
+                    <div class="d-flex justify-content-center">
+                        <img src="https://via.placeholder.com/100x50?text=Award+1" class="mx-3" alt="Award 1">
+                        <img src="https://via.placeholder.com/100x50?text=Award+2" class="mx-3" alt="Award 2">
+                        <img src="https://via.placeholder.com/100x50?text=Award+3" class="mx-3" alt="Award 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="row text-center mt-5">
+                <div class="col-12">
+                    <h3 class="mb-4" style="color: var(--deep-burgundy);">Ready to Create Your Dream Space?</h3>
+                    <p class="mb-4" style="color: var(--deep-burgundy);">Get in touch with us today to start your project!</p>
+                    <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap 5 JS (Bundle) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
